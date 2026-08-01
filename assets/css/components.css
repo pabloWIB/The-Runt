@@ -1,0 +1,220 @@
+/* ==========================================================================
+   components.css — marca, navegación, botones, tarjetas, utilidades
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Marca
+   -------------------------------------------------------------------------- */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+}
+
+.brand__mark {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+}
+
+.brand__name {
+  color: var(--color-navy);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------------------------------------
+   Navegación
+   -------------------------------------------------------------------------- */
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.nav-link:hover {
+  background: var(--color-surface);
+  color: var(--color-navy);
+}
+
+.nav-link:active {
+  background: var(--color-border);
+}
+
+/* --------------------------------------------------------------------------
+   Botones
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  letter-spacing: 0.02em;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+    border-color var(--transition);
+}
+
+.btn--primary {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-navy);
+}
+
+.btn--primary:active {
+  background: var(--color-ink);
+}
+
+.btn--secondary {
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.btn--secondary:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn--secondary:active {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-white);
+}
+
+.btn[aria-disabled="true"] {
+  background: var(--color-border);
+  border-color: var(--color-border);
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Antetítulo
+   -------------------------------------------------------------------------- */
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Regla bajo los titulares — retomada del mockup original
+   -------------------------------------------------------------------------- */
+
+.rule {
+  width: 4rem;
+  height: 2px;
+  margin-top: var(--space-3);
+  background: var(--color-navy);
+  border: 0;
+}
+
+.section__head .rule {
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Tarjetas de razones
+   -------------------------------------------------------------------------- */
+
+.reasons {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+}
+
+.reason {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.reason__icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-navy);
+}
+
+/* --------------------------------------------------------------------------
+   Texto
+   -------------------------------------------------------------------------- */
+
+.link {
+  color: var(--color-navy);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+.link:active {
+  color: var(--color-ink);
+}
+
+.lead {
+  font-size: var(--text-lg);
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Página 404
+   -------------------------------------------------------------------------- */
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  min-height: 60vh;
+  text-align: center;
+}
+
+.notfound__code {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Media queries
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .reasons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    padding: var(--space-6) var(--space-5);
+  }
+}
